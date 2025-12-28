@@ -27,6 +27,8 @@ body {
 	position: relative;
 	width: 100%;
 }
+
+/* ========== HEADER ========== */
 .header {
 	display: flex;
 	justify-content: space-between;
@@ -125,12 +127,14 @@ body {
 	transform: translateY(-2px);
 	box-shadow: 0 4px 12px rgba(23, 110, 241, 0.3);
 }
+
+/* ========== HERO SECTION ========== */
 .hero-section {
 	margin: 20px 0;
 }
 .hero-content {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	gap: 25px;
 	padding: 20px;
 	border: 1px solid #D4D4D4;
@@ -342,6 +346,8 @@ body {
 	object-fit: cover;
 	border-radius: 13.35px;
 }
+
+/* ========== WORK SECTION ========== */
 .work-section {
 	margin: 40px 0;
 }
@@ -376,7 +382,7 @@ body {
 }
 .work-content {
 	display: grid;
-	grid-template-columns: 1fr;
+	grid-template-columns: 1fr 1fr;
 	gap: 30px;
 	width: 100%;
 }
@@ -464,6 +470,8 @@ body {
 	line-height: 25px;
 	color: #9D9D9D;
 }
+
+/* ========== VACANCIES SECTION ========== */
 .vacancies-section {
 	margin: 60px 0;
 }
@@ -479,7 +487,7 @@ body {
 }
 .vacancies-grid {
 	display: grid;
-	grid-template-columns: 1fr;
+	grid-template-columns: repeat(2, 1fr);
 	gap: 20px;
 	max-width: 1200px;
 	margin: 0 auto;
@@ -538,8 +546,10 @@ body {
 	border-radius: 9.07px;
 	object-fit: cover;
 }
+
+/* ========== TEAM SECTION ========== */
 .team-section {
-	margin: 60px 0 40px 0; /* Уменьшил нижний отступ для футера */
+	margin: 60px 0 40px 0;
 	position: relative;
 	width: 100%;
 }
@@ -595,10 +605,9 @@ body {
 	border-radius: 30.6238px;
 	object-fit: cover;
 }
-/* Мобильная версия команды */
 .team-cards-mobile {
 	display: grid;
-	grid-template-columns: 1fr;
+	grid-template-columns: repeat(3, 1fr);
 	gap: 15px;
 	width: 100%;
 }
@@ -706,13 +715,13 @@ body {
 	line-height: 27px;
 	color: #000000;
 }
-/* Обновленные стили для футера */
+
+/* ========== FOOTER ========== */
 .footer-wrapper {
 	width: 100%;
 	position: relative;
-	margin-top: 20px; /* Уменьшил отступ сверху */
+	margin-top: 20px;
 }
-
 .footer {
 	width: 100%;
 	height: auto;
@@ -724,19 +733,17 @@ body {
 	position: relative;
 	padding: 15px 0;
 }
-
 .footer-content {
 	max-width: 1440px;
 	width: 100%;
 	padding: 0 24px;
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	flex-direction: row;
+	justify-content: space-between;
 	align-items: center;
 	gap: 10px;
-	text-align: center;
+	text-align: left;
 }
-
 .footer-text {
 	font-family: 'SF Pro Display';
 	font-style: normal;
@@ -744,16 +751,521 @@ body {
 	font-size: 16px;
 	line-height: 24px;
 }
-
 .footer-website {
 	color: rgba(0, 0, 0, 0.8);
 }
-
 .footer-contacts {
 	color: rgba(0, 0, 0, 0.6);
 }
 
-/* Медиа-запросы для планшетов */
+/* ========================================= */
+/* MOBILE OPTIMIZATION (320px - 767px) */
+/* ========================================= */
+@media (max-width: 767px) {
+	.App {
+		padding: 0 12px;
+	}
+	
+	/* Header Mobile - сохраняем структуру */
+	.header {
+		padding: 8px 10px;
+		margin: 12px 0;
+		gap: 5px;
+		flex-wrap: nowrap;
+	}
+	.nav-bar {
+		gap: 8px;
+		flex: 0.8;
+	}
+	.nav-link {
+		font-size: 9px;
+		line-height: 14px;
+	}
+	.logo {
+		width: 32px;
+		height: 31px;
+		margin: 0 3px;
+	}
+	.header-right {
+		gap: 5px;
+		flex: 0.8;
+	}
+	.projects-link {
+		font-size: 9px;
+		line-height: 14px;
+	}
+	.work-button {
+		font-size: 8px;
+		padding: 5px 8px;
+		line-height: 14px;
+		border-radius: 5px;
+	}
+	
+	/* Hero Section Mobile - картинка СПРАВА */
+	.hero-section {
+		margin: 12px 0;
+	}
+	.hero-content {
+		padding: 8px;
+		gap: 8px;
+		flex-direction: row;
+		min-height: auto;
+	}
+	.hero-text {
+		flex: 1;
+		gap: 6px;
+		padding-left: 0;
+		min-width: 0;
+	}
+	.hero-title {
+		font-size: 8px;
+		margin-bottom: 3px;
+		line-height: 1.1;
+	}
+	.hero-badge, 
+	.hero-badge-purple, 
+	.hero-badge-red, 
+	.hero-badge-orange, 
+	.hero-badge-beige {
+		font-size: 6px;
+		padding: 2px 5px;
+		margin-bottom: 3px;
+		border-radius: 8px;
+	}
+	.hero-description {
+		font-size: 5px;
+		line-height: 1.2;
+		margin-bottom: 5px;
+	}
+	.image-blocks {
+		gap: 4px;
+		margin-bottom: 5px;
+	}
+	.image-block {
+		width: 20px;
+		height: 18px;
+		border-radius: 4px;
+	}
+	.image-block img {
+		width: 10px;
+		height: 10px;
+	}
+	.dots-container {
+		width: 80px;
+		height: 16px;
+		margin-top: 4px;
+		border-radius: 10px;
+	}
+	.custom-dot {
+		width: 8px;
+		height: 8px;
+	}
+	.custom-dot.active {
+		width: 20px;
+		height: 8px;
+	}
+	.hero-image {
+		flex: 1.4;
+		height: auto;
+		min-height: 100px;
+		max-height: 150px;
+	}
+	.video-preview {
+		height: 100%;
+	}
+	.video-image {
+		object-fit: contain;
+	}
+	
+	/* Work Section Mobile - 2 колонки */
+	.work-section {
+		margin: 20px 0;
+	}
+	.work-title-container {
+		margin-bottom: 20px;
+		padding: 0 5px;
+	}
+	.work-title-text,
+	.work-title-strikethrough,
+	.work-title-highlight {
+		font-size: 16px;
+		line-height: 1.2;
+	}
+	.work-content {
+		gap: 15px;
+		grid-template-columns: 1fr 1fr;
+	}
+	.work-item-first {
+		margin-bottom: 10px;
+	}
+	.work-icon-positioned {
+		margin-top: 3px;
+		margin-right: 8px;
+	}
+	.work-icon img {
+		width: 22px;
+		height: 22px;
+	}
+	.unbounded-text,
+	.sf-pro-text,
+	.expansion-unbounded,
+	.expansion-sf-pro {
+		font-size: 9px;
+		line-height: 1.25;
+	}
+	.contact-container {
+		font-size: 8px;
+		margin-top: 8px;
+		line-height: 1.3;
+	}
+	
+	/* Vacancies Mobile - 2x2 */
+	.vacancies-section {
+		margin: 25px 0;
+	}
+	.vacancies-title {
+		font-size: 16px;
+		margin-bottom: 20px;
+		padding: 0 5px;
+	}
+	.vacancies-grid {
+		gap: 10px;
+		padding: 0 5px;
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.vacancy-card {
+		padding: 10px;
+		padding-left: 45px;
+		min-height: 80px;
+		border-radius: 10px;
+	}
+	.vacancy-title {
+		font-size: 9px;
+		margin-bottom: 5px;
+		line-height: 1.2;
+	}
+	.vacancy-description {
+		font-size: 7px;
+		line-height: 1.2;
+	}
+	.vacancy-icon-img {
+		width: 25px;
+		height: 25px;
+		left: 10px;
+		border-radius: 6px;
+	}
+	
+	/* Team Section Mobile - несколько в строке */
+	.team-section {
+		margin: 25px 0 20px 0;
+	}
+	.team-title {
+		font-size: 16px;
+		margin-bottom: 20px;
+		padding: 0 5px;
+	}
+	.team-card-container {
+		padding: 0 5px;
+	}
+	.team-cards-mobile {
+		gap: 8px;
+		grid-template-columns: repeat(3, 1fr);
+	}
+	.team-card-mobile {
+		padding: 8px;
+		padding-left: 40px;
+		min-height: 60px;
+		border-radius: 10px;
+	}
+	.team-avatar-mobile {
+		width: 26px;
+		height: 26px;
+		border-radius: 13px;
+		left: 8px;
+	}
+	.team-name-mobile {
+		font-size: 8px;
+		line-height: 12px;
+		margin-bottom: 2px;
+	}
+	.team-role-mobile {
+		font-size: 6px;
+		line-height: 10px;
+	}
+	.large-team-card {
+		padding: 12px;
+		margin-top: 20px;
+		min-height: auto;
+		border-radius: 10px;
+	}
+	.large-team-card-icon {
+		width: 22px;
+		height: 22px;
+		left: 12px;
+		top: 12px;
+	}
+	.large-team-card-title {
+		font-size: 9px;
+		margin-left: 36px;
+		margin-right: 12px;
+		margin-bottom: 5px;
+		line-height: 1.2;
+	}
+	.large-team-card-description {
+		font-size: 7px;
+		line-height: 1.2;
+		margin-left: 36px;
+		margin-right: 12px;
+		margin-bottom: 8px;
+	}
+	.large-team-card-button {
+		width: 60px;
+		height: 20px;
+		margin-left: 36px;
+		margin-top: 5px;
+		border-radius: 8px;
+	}
+	.large-team-card-button-text {
+		font-size: 8px;
+		line-height: 18px;
+	}
+	
+	/* Footer Mobile */
+	.footer-wrapper {
+		margin-top: 15px;
+	}
+	.footer {
+		padding: 10px 0;
+	}
+	.footer-content {
+		padding: 0 12px;
+		gap: 8px;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	.footer-text {
+		font-size: 9px;
+		line-height: 16px;
+	}
+}
+
+/* Small Mobile Devices (320px - 374px) */
+@media (max-width: 374px) {
+	.nav-link {
+		font-size: 8px;
+	}
+	.projects-link {
+		font-size: 8px;
+	}
+	.work-button {
+		font-size: 7px;
+		padding: 4px 6px;
+	}
+	.hero-title {
+		font-size: 7px;
+	}
+	.hero-badge, 
+	.hero-badge-purple, 
+	.hero-badge-red, 
+	.hero-badge-orange, 
+	.hero-badge-beige {
+		font-size: 5px;
+		padding: 2px 4px;
+	}
+	.hero-description {
+		font-size: 4px;
+	}
+	.image-block {
+		width: 18px;
+		height: 16px;
+	}
+	.image-block img {
+		width: 9px;
+		height: 9px;
+	}
+	.dots-container {
+		width: 70px;
+		height: 14px;
+	}
+	.custom-dot {
+		width: 7px;
+		height: 7px;
+	}
+	.custom-dot.active {
+		width: 18px;
+		height: 7px;
+	}
+	.hero-image {
+		max-height: 120px;
+	}
+	.work-title-text,
+	.work-title-strikethrough,
+	.work-title-highlight {
+		font-size: 14px;
+	}
+	.unbounded-text,
+	.sf-pro-text,
+	.expansion-unbounded,
+	.expansion-sf-pro {
+		font-size: 8px;
+	}
+	.contact-container {
+		font-size: 7px;
+	}
+	.team-cards-mobile {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+/* Medium Mobile (375px - 480px) */
+@media (min-width: 375px) and (max-width: 480px) {
+	.nav-link {
+		font-size: 10px;
+	}
+	.projects-link {
+		font-size: 10px;
+	}
+	.work-button {
+		font-size: 9px;
+	}
+	.hero-content {
+		padding: 10px;
+	}
+	.hero-title {
+		font-size: 9px;
+	}
+	.hero-badge, 
+	.hero-badge-purple, 
+	.hero-badge-red, 
+	.hero-badge-orange, 
+	.hero-badge-beige {
+		font-size: 7px;
+	}
+	.hero-description {
+		font-size: 6px;
+	}
+	.image-block {
+		width: 22px;
+		height: 20px;
+	}
+	.image-block img {
+		width: 11px;
+		height: 11px;
+	}
+	.dots-container {
+		width: 90px;
+		height: 18px;
+	}
+	.custom-dot {
+		width: 9px;
+		height: 9px;
+	}
+	.custom-dot.active {
+		width: 22px;
+		height: 9px;
+	}
+	.hero-image {
+		max-height: 140px;
+	}
+	.work-title-text,
+	.work-title-strikethrough,
+	.work-title-highlight {
+		font-size: 18px;
+	}
+}
+
+/* Large Mobile (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+	.header {
+		padding: 10px 12px;
+	}
+	.nav-link {
+		font-size: 11px;
+	}
+	.projects-link {
+		font-size: 11px;
+	}
+	.work-button {
+		font-size: 10px;
+		padding: 6px 10px;
+	}
+	.hero-content {
+		padding: 12px;
+		min-height: auto;
+	}
+	.hero-image {
+		max-height: 160px;
+	}
+	.hero-title {
+		font-size: 10px;
+	}
+	.hero-badge, 
+	.hero-badge-purple, 
+	.hero-badge-red, 
+	.hero-badge-orange, 
+	.hero-badge-beige {
+		font-size: 8px;
+	}
+	.hero-description {
+		font-size: 7px;
+	}
+	.image-block {
+		width: 24px;
+		height: 22px;
+	}
+	.image-block img {
+		width: 12px;
+		height: 12px;
+	}
+	.dots-container {
+		width: 100px;
+		height: 20px;
+	}
+	.custom-dot {
+		width: 10px;
+		height: 10px;
+	}
+	.custom-dot.active {
+		width: 24px;
+		height: 10px;
+	}
+	.work-title-text,
+	.work-title-strikethrough,
+	.work-title-highlight {
+		font-size: 20px;
+	}
+	.unbounded-text,
+	.sf-pro-text,
+	.expansion-unbounded,
+	.expansion-sf-pro {
+		font-size: 10px;
+	}
+	.contact-container {
+		font-size: 9px;
+	}
+	.vacancy-title {
+		font-size: 10px;
+	}
+	.vacancy-description {
+		font-size: 8px;
+	}
+	.team-name-mobile {
+		font-size: 9px;
+	}
+	.team-role-mobile {
+		font-size: 7px;
+	}
+	.large-team-card-title {
+		font-size: 10px;
+	}
+	.large-team-card-description {
+		font-size: 8px;
+	}
+}
+
+/* ========================================= */
+/* TABLET (768px - 1023px) */
+/* ========================================= */
 @media (min-width: 768px) {
 	.header {
 		padding: 15px 30px;
@@ -830,7 +1342,7 @@ body {
 		height: 55px;
 	}
 	.team-cards-mobile {
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(4, 1fr);
 	}
 	.large-team-card {
 		margin-top: 50px;
@@ -853,7 +1365,9 @@ body {
 	}
 }
 
-/* Медиа-запросы для десктопов */
+/* ========================================= */
+/* DESKTOP (1024px+) */
+/* ========================================= */
 @media (min-width: 1024px) {
 	.header {
 		padding: 15px 40px;
@@ -950,7 +1464,7 @@ body {
 		transform: none;
 	}
 	.team-section {
-		margin: 80px 0 60px 0; /* Уменьшил нижний отступ для десктопа */
+		margin: 80px 0 60px 0;
 		position: relative;
 	}
 	.team-title {
@@ -961,7 +1475,7 @@ body {
 		height: 650px;
 		padding: 0 24px;
 		position: relative;
-		margin-bottom: 320px; /* Уменьшил отступ снизу */
+		margin-bottom: 320px;
 	}
 	.team-cards-mobile {
 		display: none;
@@ -1009,7 +1523,7 @@ body {
 		width: 1080px;
 		height: 214px;
 		left: 91px;
-		top: 840px; /* Поднял выше, чтобы был ближе к карточкам команды */
+		top: 840px;
 		padding: 0;
 		margin-top: 0;
 		z-index: 10;
@@ -1064,7 +1578,7 @@ body {
 		<a href="#" class="nav-link" id="vacancies-link">Вакансии</a>
 	</nav>
 	<div class="logo">
-		<img src="logo.png">
+		<img src="logo.png" alt="Logo">
 	</div>
 	<div class="header-right">
 		<a href="#" class="projects-link">Наши проекты</a>
@@ -1088,7 +1602,7 @@ body {
 		<div class="work-item">
 			<div class="work-item-first">
 				<div class="work-icon work-icon-positioned">
-					<img src="logo.png">
+					<img src="logo.png" alt="Logo">
 				</div>
 				<div class="work-text">
 					<div class="arayen-text">
@@ -1143,184 +1657,184 @@ body {
 		<div class="team-card">
 			<div class="team-name">myPPotae</div>
 			<div class="team-role">managing director</div>
-			<img class="team-avatar" src="myPPotae.png">
+			<img class="team-avatar" src="myPPotae.png" alt="Avatar">
 		</div>
 		<div class="team-card">
 			<div class="team-name">eksponate</div>
 			<div class="team-role">director media & creative</div>
-			<img class="team-avatar" src="eksponate.png">
+			<img class="team-avatar" src="eksponate.png" alt="Avatar">
 		</div>
 		<div class="team-card">
 			<div class="team-name">imson</div>
 			<div class="team-role">director b2b & technical</div>
-			<img class="team-avatar" src="imson.png">
+			<img class="team-avatar" src="imson.png" alt="Avatar">
 		</div>
 		<div class="team-card">
 			<div class="team-name">luxash</div>
 			<div class="team-role">director researh & development</div>
-			<img class="team-avatar" src="luxash.png">
+			<img class="team-avatar" src="luxash.png" alt="Avatar">
 		</div>
 		<div class="team-card">
 			<div class="team-name">tech_work</div>
 			<div class="team-role">helper</div>
-			<img class="team-avatar" src="tech_work.png">
+			<img class="team-avatar" src="tech_work.png" alt="Avatar">
 		</div>
 		<div class="team-card">
 			<div class="team-name">rish</div>
 			<div class="team-role">video editor</div>
-			<img class="team-avatar" src="rish.png">
+			<img class="team-avatar" src="rish.png" alt="Avatar">
 		</div>
 		<div class="team-card">
 			<div class="team-name">serqay</div>
 			<div class="team-role">3d modeller</div>
-			<img class="team-avatar" src="serqay.png">
+			<img class="team-avatar" src="serqay.png" alt="Avatar">
 		</div>
 		<div class="team-card">
 			<div class="team-name">Prostoy_Artemka</div>
 			<div class="team-role">Infrastructure admin</div>
-			<img class="team-avatar" src="Prostoy_Artemka.png">
+			<img class="team-avatar" src="Prostoy_Artemka.png" alt="Avatar">
 		</div>
 		<div class="team-card">
 			<div class="team-name">pochemuchka</div>
 			<div class="team-role">developer & 3d modeller</div>
-			<img class="team-avatar" src="pochemuchka.png">
+			<img class="team-avatar" src="pochemuchka.png" alt="Avatar">
 		</div>
 		<div class="team-card">
 			<div class="team-name">Vizle</div>
 			<div class="team-role">3d modeller</div>
-			<img class="team-avatar" src="Vizle.png">
+			<img class="team-avatar" src="Vizle.png" alt="Avatar">
 		</div>
 		<div class="team-card">
 			<div class="team-name">sixxtn</div>
 			<div class="team-role">builder</div>
-			<img class="team-avatar" src="sixxtn.png">
+			<img class="team-avatar" src="sixxtn.png" alt="Avatar">
 		</div>
 		<div class="team-card">
 			<div class="team-name">Mediar</div>
 			<div class="team-role">skinmaker</div>
-			<img class="team-avatar" src="Mediar.png">
+			<img class="team-avatar" src="Mediar.png" alt="Avatar">
 		</div>
 		<div class="team-card">
 			<div class="team-name">ProTiPro</div>
 			<div class="team-role">3d modeller</div>
-			<img class="team-avatar" src="ProTiPro.png">
+			<img class="team-avatar" src="ProTiPro.png" alt="Avatar">
 		</div>
 		<div class="team-card">
 			<div class="team-name">Nespisnikersni</div>
 			<div class="team-role">developer</div>
-			<img class="team-avatar" src="Nespisnikersni.png">
+			<img class="team-avatar" src="Nespisnikersni.png" alt="Avatar">
 		</div>
 		<div class="team-card">
 			<div class="team-name">MaKnakezZ</div>
 			<div class="team-role">bilder</div>
-			<img class="team-avatar" src="MaKnakezZ.png">
+			<img class="team-avatar" src="MaKnakezZ.png" alt="Avatar">
 		</div>
 		<div class="team-card">
 			<div class="team-name">Romich333</div>
 			<div class="team-role">3d modeller</div>
-			<img class="team-avatar" src="Romich333.png">
+			<img class="team-avatar" src="Romich333.png" alt="Avatar">
 		</div>
 		<div class="team-card">
 			<div class="team-name">HKachka</div>
 			<div class="team-role">counselor</div>
-			<img class="team-avatar" src="HKachka.png">
+			<img class="team-avatar" src="HKachka.png" alt="Avatar">
 		</div>
 		<div class="team-card">
 			<div class="team-name">MrCopeika</div>
 			<div class="team-role">skinmaker</div>
-			<img class="team-avatar" src="MrCopeika.png">
+			<img class="team-avatar" src="MrCopeika.png" alt="Avatar">
 		</div>
 	</div>
 	
 	<!-- Мобильная версия команды -->
 	<div class="team-cards-mobile">
 		<div class="team-card-mobile">
-			<img class="team-avatar-mobile" src="myPPotae.png">
+			<img class="team-avatar-mobile" src="myPPotae.png" alt="Avatar">
 			<div class="team-name-mobile">myPPotae</div>
 			<div class="team-role-mobile">managing director</div>
 		</div>
 		<div class="team-card-mobile">
-			<img class="team-avatar-mobile" src="eksponate.png">
+			<img class="team-avatar-mobile" src="eksponate.png" alt="Avatar">
 			<div class="team-name-mobile">eksponate</div>
 			<div class="team-role-mobile">director media & creative</div>
 		</div>
 		<div class="team-card-mobile">
-			<img class="team-avatar-mobile" src="imson.png">
+			<img class="team-avatar-mobile" src="imson.png" alt="Avatar">
 			<div class="team-name-mobile">imson</div>
 			<div class="team-role-mobile">director b2b & technical</div>
 		</div>
 		<div class="team-card-mobile">
-			<img class="team-avatar-mobile" src="luxash.png">
+			<img class="team-avatar-mobile" src="luxash.png" alt="Avatar">
 			<div class="team-name-mobile">luxash</div>
 			<div class="team-role-mobile">director researh & development</div>
 		</div>
 		<div class="team-card-mobile">
-			<img class="team-avatar-mobile" src="tech_work.png">
+			<img class="team-avatar-mobile" src="tech_work.png" alt="Avatar">
 			<div class="team-name-mobile">tech_work</div>
 			<div class="team-role-mobile">helper</div>
 		</div>
 		<div class="team-card-mobile">
-			<img class="team-avatar-mobile" src="rish.png">
+			<img class="team-avatar-mobile" src="rish.png" alt="Avatar">
 			<div class="team-name-mobile">rish</div>
 			<div class="team-role-mobile">video editor</div>
 		</div>
 		<div class="team-card-mobile">
-			<img class="team-avatar-mobile" src="serqay.png">
+			<img class="team-avatar-mobile" src="serqay.png" alt="Avatar">
 			<div class="team-name-mobile">serqay</div>
 			<div class="team-role-mobile">3d modeller</div>
 		</div>
 		<div class="team-card-mobile">
-			<img class="team-avatar-mobile" src="Prostoy_Artemka.png">
+			<img class="team-avatar-mobile" src="Prostoy_Artemka.png" alt="Avatar">
 			<div class="team-name-mobile">Prostoy_Artemka</div>
 			<div class="team-role-mobile">Infrastructure admin</div>
 		</div>
 		<div class="team-card-mobile">
-			<img class="team-avatar-mobile" src="pochemuchka.png">
+			<img class="team-avatar-mobile" src="pochemuchka.png" alt="Avatar">
 			<div class="team-name-mobile">pochemuchka</div>
 			<div class="team-role-mobile">developer & 3d modeller</div>
 		</div>
 		<div class="team-card-mobile">
-			<img class="team-avatar-mobile" src="Vizle.png">
+			<img class="team-avatar-mobile" src="Vizle.png" alt="Avatar">
 			<div class="team-name-mobile">Vizle</div>
 			<div class="team-role-mobile">3d modeller</div>
 		</div>
 		<div class="team-card-mobile">
-			<img class="team-avatar-mobile" src="sixxtn.png">
+			<img class="team-avatar-mobile" src="sixxtn.png" alt="Avatar">
 			<div class="team-name-mobile">sixxtn</div>
 			<div class="team-role-mobile">builder</div>
 		</div>
 		<div class="team-card-mobile">
-			<img class="team-avatar-mobile" src="Mediar.png">
+			<img class="team-avatar-mobile" src="Mediar.png" alt="Avatar">
 			<div class="team-name-mobile">Mediar</div>
 			<div class="team-role-mobile">skinmaker</div>
 		</div>
 		<div class="team-card-mobile">
-			<img class="team-avatar-mobile" src="ProTiPro.png">
+			<img class="team-avatar-mobile" src="ProTiPro.png" alt="Avatar">
 			<div class="team-name-mobile">ProTiPro</div>
 			<div class="team-role-mobile">3d modeller</div>
 		</div>
 		<div class="team-card-mobile">
-			<img class="team-avatar-mobile" src="Nespisnikersni.png">
+			<img class="team-avatar-mobile" src="Nespisnikersni.png" alt="Avatar">
 			<div class="team-name-mobile">Nespisnikersni</div>
 			<div class="team-role-mobile">developer</div>
 		</div>
 		<div class="team-card-mobile">
-			<img class="team-avatar-mobile" src="MaKnakezZ.png">
+			<img class="team-avatar-mobile" src="MaKnakezZ.png" alt="Avatar">
 			<div class="team-name-mobile">MaKnakezZ</div>
 			<div class="team-role-mobile">bilder</div>
 		</div>
 		<div class="team-card-mobile">
-			<img class="team-avatar-mobile" src="Romich333.png">
+			<img class="team-avatar-mobile" src="Romich333.png" alt="Avatar">
 			<div class="team-name-mobile">Romich333</div>
 			<div class="team-role-mobile">3d modeller</div>
 		</div>
 		<div class="team-card-mobile">
-			<img class="team-avatar-mobile" src="HKachka.png">
+			<img class="team-avatar-mobile" src="HKachka.png" alt="Avatar">
 			<div class="team-name-mobile">HKachka</div>
 			<div class="team-role-mobile">counselor</div>
 		</div>
 		<div class="team-card-mobile">
-			<img class="team-avatar-mobile" src="MrCopeika.png">
+			<img class="team-avatar-mobile" src="MrCopeika.png" alt="Avatar">
 			<div class="team-name-mobile">MrCopeika</div>
 			<div class="team-role-mobile">skinmaker</div>
 		</div>
@@ -1330,7 +1844,7 @@ body {
 	<div class="large-team-card">
 		<div class="large-team-card-content">
 			<div class="large-team-card-icon">
-				<img src="solt.png" alt="Иконка"> <!-- Изменено на solt.png -->
+				<img src="solt.png" alt="Иконка">
 			</div>
 			<div class="large-team-card-title">
 				Мы делаем сайты (и нетолько) на заказ
@@ -1338,14 +1852,14 @@ body {
 			<div class="large-team-card-description">
 				А также выстраиваем линию сотрудничества с другими проектами. Если у вас уже есть готовый проект: большой, маленький, проект на этапе идеи — пишите. Мы всегда готовы инвестировать в good project и коллаборировать.
 			</div>
-			<div class="large-team-card-button" onclick="window.open('https://t.me/mineteam_admin', '_blank');"> <!-- Изменена ссылка на @mineteam_admin -->
+			<div class="large-team-card-button" onclick="window.open('https://t.me/mineteam_admin', '_blank');">
 				<span class="large-team-card-button-text">написать</span>
 			</div>
 		</div>
 	</div>
 </section>
 
-<!-- Обновленный футер на всю ширину -->
+<!-- Футер на всю ширину -->
 <div class="footer-wrapper">
 	<div class="footer">
 		<div class="footer-content">
