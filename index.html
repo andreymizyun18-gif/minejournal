@@ -1,0 +1,1648 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Майнкрафт Журнал Nagibayka</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+	background: #FFFFFF;
+	color: #000000;
+	line-height: 1.6;
+	overflow-x: hidden;
+}
+.App {
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 0 24px;
+	position: relative;
+	width: 100%;
+}
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border: 1px solid rgba(0, 0, 0, 0.17);
+	border-radius: 13.5px;
+	padding: 15px 20px;
+	margin: 24px 0;
+	flex-wrap: nowrap;
+	gap: 15px;
+}
+.nav-bar {
+	display: flex;
+	gap: 20px;
+	align-items: center;
+	flex-wrap: nowrap;
+	flex: 1;
+	justify-content: flex-start;
+	overflow-x: auto;
+	padding-bottom: 5px;
+}
+.nav-bar::-webkit-scrollbar {
+	display: none;
+}
+.nav-link {
+	font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 23px;
+	color: #757575;
+	text-decoration: none;
+	transition: color 0.3s ease;
+	cursor: pointer;
+	white-space: nowrap;
+	flex-shrink: 0;
+}
+.nav-link.active {
+	color: #000000;
+}
+.nav-link:hover {
+	color: #000000;
+}
+.logo {
+	width: 52px;
+	height: 51px;
+	border-radius: 16.5px;
+	overflow: hidden;
+	flex-shrink: 0;
+	margin: 0 10px;
+}
+.logo img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 16.5px;
+}
+.header-right {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	flex-wrap: nowrap;
+	justify-content: flex-end;
+	flex: 1;
+}
+.projects-link {
+	font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 23px;
+	color: #757575;
+	text-decoration: none;
+	transition: color 0.3s ease;
+	white-space: nowrap;
+	flex-shrink: 0;
+}
+.projects-link:hover {
+	color: #000000;
+}
+.work-button {
+	font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+	background: #176EF1;
+	border-radius: 7.74px;
+	padding: 10px 16px;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 23px;
+	color: #FFFFFF;
+	border: none;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	white-space: nowrap;
+	flex-shrink: 0;
+}
+.work-button:hover {
+	background: #1461d8;
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(23, 110, 241, 0.3);
+}
+.hero-section {
+	margin: 20px 0;
+}
+.hero-content {
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+	padding: 20px;
+	border: 1px solid #D4D4D4;
+	border-radius: 14px;
+	align-items: stretch;
+	min-height: auto;
+	transition: all 0.5s ease;
+	width: 100%;
+}
+.hero-text {
+	flex: 1;
+	padding-left: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 20px;
+}
+.text-content {
+	flex: 1;
+}
+.hero-title {
+	color: black;
+	font-size: 20px;
+	font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+	font-weight: 700;
+	word-wrap: break-word;
+	margin-bottom: 10px;
+	margin-left: 0;
+}
+.hero-badge {
+	display: inline-block;
+	background: #176EF1;
+	border-radius: 16px;
+	padding: 5px 12px;
+	font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+	font-weight: 600;
+	font-size: 14px;
+	color: #FFFFFF;
+	margin-bottom: 10px;
+	margin-left: 0;
+}
+.hero-badge-purple {
+	display: inline-block;
+	background: #D017F1;
+	border-radius: 16px;
+	padding: 5px 12px;
+	font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+	font-weight: 600;
+	font-size: 14px;
+	color: #FFFFFF;
+	margin-bottom: 10px;
+	margin-left: 0;
+}
+.hero-badge-red {
+	display: inline-block;
+	background: #F02751;
+	border-radius: 16px;
+	padding: 5px 12px;
+	font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+	font-weight: 600;
+	font-size: 14px;
+	color: #FFFFFF;
+	margin-bottom: 10px;
+	margin-left: 0;
+}
+.hero-badge-orange {
+	display: inline-block;
+	background: #8C4A2F;
+	border-radius: 16px;
+	padding: 5px 12px;
+	font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+	font-weight: 600;
+	font-size: 14px;
+	color: #FFFFFF;
+	margin-bottom: 10px;
+	margin-left: 0;
+}
+.hero-badge-beige {
+	display: inline-block;
+	background: #B9A58A;
+	border-radius: 16px;
+	padding: 5px 12px;
+	font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+	font-weight: 600;
+	font-size: 14px;
+	color: #FFFFFF;
+	margin-bottom: 10px;
+	margin-left: 0;
+}
+.hero-description {
+	font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 1.4;
+	color: #333333;
+	margin-bottom: 15px;
+	margin-left: 0;
+}
+.image-blocks {
+	display: flex;
+	gap: 10px;
+	margin-left: 0;
+	margin-bottom: 15px;
+	flex-wrap: wrap;
+}
+.image-block {
+	width: 44px;
+	height: 40px;
+	background: #FFFFFF;
+	border-radius: 8px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 0.71px solid #D4D4D4;
+	transition: all 0.3s ease;
+	cursor: pointer;
+	position: relative;
+	flex-shrink: 0;
+}
+.image-block:hover {
+	border-color: #176EF1;
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(23, 110, 241, 0.2);
+}
+.image-block.active {
+	border-color: #176EF1 !important;
+	background: rgba(23, 110, 241, 0.1) !important;
+	transform: translateY(-2px);
+}
+.image-block img {
+	width: 22px;
+	height: 22px;
+	object-fit: contain;
+}
+.dots-container {
+	background: #F4F4F4;
+	border-radius: 18px;
+	width: 180px;
+	height: 36px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: 0;
+	border: none;
+	position: relative;
+	margin-top: 10px;
+}
+.slider-dots-custom {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.dots-background {
+	position: absolute;
+	background: #F4F4F4;
+	border-radius: 18px;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}
+.custom-dot {
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	flex-shrink: 0;
+	position: relative;
+	z-index: 1;
+}
+.custom-dot:hover {
+	opacity: 0.7;
+	transform: scale(1.1);
+}
+.custom-dot.active {
+	width: 40px;
+	height: 16px;
+	border-radius: 8px;
+	opacity: 1;
+}
+.hero-image {
+	flex: 1;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 250px;
+	width: 100%;
+	min-height: 250px;
+}
+.video-preview {
+	background: #f5f5f5;
+	border-radius: 13.35px;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.video-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 13.35px;
+}
+.work-section {
+	margin: 40px 0;
+}
+.work-title-container {
+	width: 100%;
+	max-width: 619px;
+	margin: 0 auto 40px auto;
+	text-align: center;
+	padding: 0 15px;
+}
+.work-title-text {
+	font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+	font-weight: 700;
+	font-size: 32px;
+	color: #000000;
+	display: inline;
+}
+.work-title-strikethrough {
+	font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+	font-weight: 700;
+	font-size: 32px;
+	color: #000000;
+	text-decoration: line-through;
+	display: inline;
+}
+.work-title-highlight {
+	font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+	font-weight: 700;
+	font-size: 32px;
+	color: #176EF1;
+	display: inline;
+}
+.work-content {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 30px;
+	width: 100%;
+}
+.work-item {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+.work-item-first {
+	display: flex;
+	align-items: flex-start;
+	position: relative;
+	margin-bottom: 30px;
+	width: 100%;
+}
+.work-icon {
+	position: relative;
+	flex-shrink: 0;
+	margin-right: 15px;
+	transform: translate(0, 0);
+}
+.work-icon-positioned {
+	margin-top: 10px;
+	margin-left: 0;
+	margin-right: 15px;
+}
+.work-icon img {
+	width: 40px;
+	height: 40px;
+	border-radius: 9px;
+	object-fit: cover;
+}
+.arayen-text {
+	width: 100%;
+	height: auto;
+	min-height: auto;
+	position: relative;
+	padding-left: 0;
+}
+.unbounded-text {
+	font-family: 'Unbounded', sans-serif;
+	font-weight: 700;
+	font-size: 22px;
+	color: #000000;
+}
+.sf-pro-text {
+	font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+	font-weight: 500;
+	font-size: 22px;
+	color: #000000;
+	display: inline;
+}
+.expansion-text {
+	width: 100%;
+	height: auto;
+}
+.expansion-unbounded {
+	font-family: 'Unbounded', sans-serif;
+	font-weight: 700;
+	font-size: 22px;
+	color: #000000;
+}
+.expansion-sf-pro {
+	font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+	font-weight: 500;
+	font-size: 22px;
+	color: #000000;
+	display: inline;
+}
+.contact-container {
+	width: 100%;
+	height: auto;
+	color: #9D9D9D;
+	font-size: 18px;
+	font-family: 'Unbounded', sans-serif;
+	font-weight: 700;
+	word-wrap: break-word;
+	margin-top: 15px;
+	line-height: 1.4;
+}
+.work-text p {
+	font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 25px;
+	color: #9D9D9D;
+}
+.vacancies-section {
+	margin: 60px 0;
+}
+.vacancies-title {
+	color: black;
+	font-size: 32px;
+	font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+	font-weight: 700;
+	word-wrap: break-word;
+	text-align: center;
+	margin-bottom: 40px;
+	padding: 0 15px;
+}
+.vacancies-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 20px;
+	max-width: 1200px;
+	margin: 0 auto;
+	width: 100%;
+	padding: 0 15px;
+}
+.vacancy-card {
+	width: 100%;
+	height: auto;
+	min-height: 140px;
+	position: relative;
+	overflow: hidden;
+	border-radius: 14px;
+	outline: 1px #D4D4D4 solid;
+	outline-offset: -1px;
+	transition: all 0.3s ease;
+	padding: 20px;
+	padding-left: 90px;
+}
+.vacancy-card:hover {
+	outline-color: #176EF1;
+	box-shadow: 0 4px 20px rgba(23, 110, 241, 0.1);
+	transform: translateY(-5px);
+}
+.vacancy-title {
+	position: relative;
+	left: auto;
+	top: auto;
+	color: black;
+	font-size: 20px;
+	font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+	font-weight: 700;
+	word-wrap: break-word;
+	margin-bottom: 10px;
+	display: block;
+}
+.vacancy-description {
+	width: 100%;
+	position: relative;
+	left: auto;
+	top: auto;
+	color: #333333;
+	font-size: 18px;
+	font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+	font-weight: 500;
+	word-wrap: break-word;
+	line-height: 1.4;
+}
+.vacancy-icon-img {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	left: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+	border-radius: 9.07px;
+	object-fit: cover;
+}
+.team-section {
+	margin: 60px 0 40px 0; /* Уменьшил нижний отступ для футера */
+	position: relative;
+	width: 100%;
+}
+.team-title {
+	color: black;
+	font-size: 32px;
+	font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+	font-weight: 700;
+	word-wrap: break-word;
+	text-align: center;
+	margin-bottom: 40px;
+	padding: 0 15px;
+}
+.team-card-container {
+	position: relative;
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 0 15px;
+	height: auto;
+	width: 100%;
+	display: block;
+}
+.team-card {
+	background: #FFFFFF;
+	border: 1.02079px solid #D4D4D4;
+	border-radius: 14.2911px;
+	position: absolute;
+	box-sizing: border-box;
+	display: none;
+}
+.team-name {
+	position: absolute;
+	font-family: 'Unbounded', sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 18.856px;
+	line-height: 23px;
+	color: #000000;
+}
+.team-role {
+	position: absolute;
+	font-family: 'Unbounded', sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 15.3115px;
+	line-height: 19px;
+	color: #4F4F4F;
+}
+.team-avatar {
+	position: absolute;
+	width: 61.63px;
+	height: 60.23px;
+	border-radius: 30.6238px;
+	object-fit: cover;
+}
+/* Мобильная версия команды */
+.team-cards-mobile {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 15px;
+	width: 100%;
+}
+.team-card-mobile {
+	background: #FFFFFF;
+	border: 1.02079px solid #D4D4D4;
+	border-radius: 14.2911px;
+	padding: 15px;
+	padding-left: 80px;
+	min-height: 100px;
+	position: relative;
+}
+.team-avatar-mobile {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	border-radius: 25px;
+	object-fit: cover;
+	left: 15px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.team-name-mobile {
+	font-family: 'Unbounded', sans-serif;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 23px;
+	color: #000000;
+	margin-bottom: 5px;
+}
+.team-role-mobile {
+	font-family: 'Unbounded', sans-serif;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 19px;
+	color: #4F4F4F;
+}
+.large-team-card {
+	background: #FFFFFF;
+	border: 1.02079px solid #D4D4D4;
+	border-radius: 14.2911px;
+	position: relative;
+	padding: 20px;
+	margin-top: 40px;
+	min-height: 200px;
+	width: 100%;
+}
+.large-team-card-content {
+	position: relative;
+	width: 100%;
+}
+.large-team-card-icon {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	left: 20px;
+	top: 20px;
+}
+.large-team-card-icon img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.large-team-card-title {
+	font-family: 'SF Pro Display';
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 1.2;
+	color: #000000;
+	margin-bottom: 10px;
+	margin-left: 60px;
+	margin-right: 20px;
+}
+.large-team-card-description {
+	font-family: 'SF Pro Display';
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 1.4;
+	color: #000000;
+	margin-bottom: 15px;
+	margin-left: 60px;
+	margin-right: 20px;
+}
+.large-team-card-button {
+	width: 120px;
+	height: 35px;
+	border: 0.875px solid #000000;
+	border-radius: 12.25px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 5px 10px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	margin-top: 10px;
+	margin-left: 60px;
+}
+.large-team-card-button:hover {
+	background: #f0f0f0;
+}
+.large-team-card-button-text {
+	font-family: 'SF Pro Display';
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 27px;
+	color: #000000;
+}
+/* Обновленные стили для футера */
+.footer-wrapper {
+	width: 100%;
+	position: relative;
+	margin-top: 20px; /* Уменьшил отступ сверху */
+}
+
+.footer {
+	width: 100%;
+	height: auto;
+	min-height: 52px;
+	background: #EFEFEF;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	padding: 15px 0;
+}
+
+.footer-content {
+	max-width: 1440px;
+	width: 100%;
+	padding: 0 24px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	text-align: center;
+}
+
+.footer-text {
+	font-family: 'SF Pro Display';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 24px;
+}
+
+.footer-website {
+	color: rgba(0, 0, 0, 0.8);
+}
+
+.footer-contacts {
+	color: rgba(0, 0, 0, 0.6);
+}
+
+/* Медиа-запросы для планшетов */
+@media (min-width: 768px) {
+	.header {
+		padding: 15px 30px;
+		flex-wrap: nowrap;
+	}
+	.nav-bar {
+		gap: 30px;
+		justify-content: center;
+		overflow-x: visible;
+	}
+	.nav-link {
+		font-size: 18px;
+	}
+	.logo {
+		margin: 0 20px;
+	}
+	.header-right {
+		gap: 20px;
+		justify-content: flex-end;
+	}
+	.projects-link {
+		font-size: 18px;
+	}
+	.work-button {
+		font-size: 18px;
+		padding: 11px 18px;
+	}
+	.hero-content {
+		flex-direction: row;
+		min-height: 350px;
+	}
+	.hero-text {
+		padding-left: 15px;
+	}
+	.hero-title {
+		font-size: 22px;
+		margin-left: 15px;
+	}
+	.hero-badge, .hero-badge-purple, .hero-badge-red, .hero-badge-orange, .hero-badge-beige {
+		margin-left: 15px;
+		font-size: 15px;
+	}
+	.hero-description {
+		font-size: 18px;
+		margin-left: 15px;
+	}
+	.image-blocks {
+		margin-left: 15px;
+	}
+	.dots-container {
+		margin-left: 15px;
+	}
+	.hero-image {
+		height: 320px;
+		min-height: 320px;
+	}
+	.work-title-text, .work-title-strikethrough, .work-title-highlight {
+		font-size: 42px;
+	}
+	.work-content {
+		grid-template-columns: 1fr 1fr;
+		gap: 40px;
+	}
+	.vacancies-grid {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 25px;
+	}
+	.vacancy-card {
+		padding-left: 100px;
+		height: 150px;
+	}
+	.vacancy-icon-img {
+		width: 55px;
+		height: 55px;
+	}
+	.team-cards-mobile {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.large-team-card {
+		margin-top: 50px;
+	}
+	.large-team-card-title {
+		font-size: 22px;
+		margin-left: 70px;
+	}
+	.large-team-card-description {
+		font-size: 18px;
+		margin-left: 70px;
+	}
+	.large-team-card-button {
+		margin-left: 70px;
+	}
+	.footer-content {
+		flex-direction: row;
+		justify-content: space-between;
+		text-align: left;
+	}
+}
+
+/* Медиа-запросы для десктопов */
+@media (min-width: 1024px) {
+	.header {
+		padding: 15px 40px;
+	}
+	.nav-bar {
+		gap: 38px;
+	}
+	.nav-link {
+		font-size: 19.35px;
+	}
+	.projects-link {
+		font-size: 19.35px;
+	}
+	.work-button {
+		font-size: 19.35px;
+		padding: 11.6px 19.35px;
+	}
+	.hero-section {
+		margin: 30.5px 0;
+	}
+	.hero-content {
+		min-height: 400px;
+	}
+	.hero-title {
+		font-size: 22px;
+	}
+	.hero-badge, .hero-badge-purple, .hero-badge-red, .hero-badge-orange, .hero-badge-beige {
+		font-size: 16px;
+		padding: 5px 14px;
+	}
+	.hero-description {
+		font-size: 19px;
+	}
+	.image-block {
+		width: 48px;
+		height: 43px;
+	}
+	.image-block img {
+		width: 26px;
+		height: 26px;
+	}
+	.hero-image {
+		height: 367.5px;
+		min-height: 367.5px;
+	}
+	.work-title-text, .work-title-strikethrough, .work-title-highlight {
+		font-size: 50.38px;
+	}
+	.work-section {
+		margin: 60px 0;
+	}
+	.work-title-container {
+		margin-bottom: 60px;
+	}
+	.unbounded-text, .sf-pro-text, .expansion-unbounded, .expansion-sf-pro {
+		font-size: 27.98px;
+	}
+	.contact-container {
+		font-size: 20.46px;
+	}
+	.vacancies-section {
+		margin: 80px 0;
+	}
+	.vacancies-title {
+		font-size: 50.38px;
+		margin-bottom: 60px;
+	}
+	.vacancies-grid {
+		gap: 30px;
+	}
+	.vacancy-card {
+		width: 100%;
+		height: 168px;
+		padding-left: 128px;
+	}
+	.vacancy-title {
+		font-size: 22.39px;
+		position: absolute;
+		left: 128px;
+		top: 39px;
+	}
+	.vacancy-description {
+		font-size: 22.10px;
+		position: absolute;
+		left: 128px;
+		top: 77px;
+		width: calc(100% - 140px);
+	}
+	.vacancy-icon-img {
+		width: 60.37px;
+		height: 59px;
+		left: 46px;
+		top: 39px;
+		transform: none;
+	}
+	.team-section {
+		margin: 80px 0 60px 0; /* Уменьшил нижний отступ для десктопа */
+		position: relative;
+	}
+	.team-title {
+		font-size: 50.38px;
+		margin-bottom: 60px;
+	}
+	.team-card-container {
+		height: 650px;
+		padding: 0 24px;
+		position: relative;
+		margin-bottom: 320px; /* Уменьшил отступ снизу */
+	}
+	.team-cards-mobile {
+		display: none;
+	}
+	.team-card {
+		display: block;
+	}
+	.team-card:nth-child(1) { width: 316.45px; height: 107.18px; left: 91px; top: 0; }
+	.team-card:nth-child(2) { width: 371.57px; height: 107.18px; left: 426.84px; top: 0; }
+	.team-card:nth-child(3) { width: 353.19px; height: 107.18px; left: 817.8px; top: 0; }
+	.team-card:nth-child(4) { width: 430.65px; height: 107.10px; left: 91px; top: 130px; }
+	.team-card:nth-child(5) { width: 255px; height: 107px; left: 542px; top: 130px; }
+	.team-card:nth-child(6) { width: 255px; height: 107px; left: 817px; top: 130px; }
+	.team-card:nth-child(7) { width: 255px; height: 107px; left: 1092px; top: 130px; }
+	.team-card:nth-child(8) { width: 342px; height: 107px; left: 91px; top: 260px; }
+	.team-card:nth-child(9) { width: 355px; height: 107px; left: 453px; top: 260px; }
+	.team-card:nth-child(10) { width: 355px; height: 107px; left: 828px; top: 260px; }
+	.team-card:nth-child(11) { width: 250px; height: 107px; left: 91px; top: 390px; }
+	.team-card:nth-child(12) { width: 236px; height: 107px; left: 361px; top: 390px; }
+	.team-card:nth-child(13) { width: 300px; height: 107px; left: 617px; top: 390px; }
+	.team-card:nth-child(14) { width: 355px; height: 107px; left: 939px; top: 390px; }
+	.team-card:nth-child(15) { width: 296px; height: 107px; left: 91px; top: 520px; }
+	.team-card:nth-child(16) { width: 296px; height: 107px; left: 407px; top: 520px; }
+	.team-card:nth-child(17) { width: 280px; height: 107px; left: 723px; top: 520px; }
+	.team-card:nth-child(18) { width: 307px; height: 107px; left: 1023px; top: 520px; }
+	
+	.team-name {
+		position: absolute !important;
+		left: 107.18px !important;
+		top: 25.96px !important;
+	}
+	.team-role {
+		position: absolute !important;
+		left: 107.18px !important;
+		top: 58.53px !important;
+	}
+	.team-avatar {
+		width: 61.63px;
+		height: 60.23px;
+		left: 23.48px !important;
+		top: 23.48px !important;
+	}
+	.large-team-card {
+		position: absolute;
+		width: 1080px;
+		height: 214px;
+		left: 91px;
+		top: 840px; /* Поднял выше, чтобы был ближе к карточкам команды */
+		padding: 0;
+		margin-top: 0;
+		z-index: 10;
+	}
+	.large-team-card-content {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+	.large-team-card-icon {
+		position: absolute;
+		width: 43px;
+		height: 43px;
+		left: 30px;
+		top: 26px;
+	}
+	.large-team-card-title {
+		position: absolute;
+		width: 494px;
+		height: 31px;
+		left: calc(50% - 494px/2 - 208px);
+		top: 32px;
+		font-size: 26px;
+		margin: 0;
+	}
+	.large-team-card-description {
+		position: absolute;
+		width: 953px;
+		height: 93px;
+		left: calc(50% - 953px/2 + 21.5px);
+		top: 82px;
+		font-size: 26px;
+		margin: 0;
+	}
+	.large-team-card-button {
+		position: absolute;
+		width: 115.5px;
+		height: 31.38px;
+		left: 605px;
+		top: 33px;
+		margin: 0;
+	}
+}
+</style>
+</head>
+<body>
+<div class="App">
+<header class="header">
+	<nav class="nav-bar">
+		<a href="#" class="nav-link active">Главная</a>
+		<a href="#" class="nav-link" id="contacts-link">Контакты</a>
+		<a href="#" class="nav-link" id="vacancies-link">Вакансии</a>
+	</nav>
+	<div class="logo">
+		<img src="logo.png">
+	</div>
+	<div class="header-right">
+		<a href="#" class="projects-link">Наши проекты</a>
+		<button class="work-button" id="work-with-us-button">Работать с нами</button>
+	</div>
+</header>
+
+<section class="hero-section">
+	<div class="hero-content" id="hero-slider">
+	</div>
+</section>
+
+<section class="work-section">
+	<div class="work-title-container" id="work-with-us-title">
+		<span class="work-title-text">Работать </span>
+		<span class="work-title-strikethrough">у нас</span>
+		<span class="work-title-text"> </span>
+		<span class="work-title-highlight">с нами</span>
+	</div>
+	<div class="work-content">
+		<div class="work-item">
+			<div class="work-item-first">
+				<div class="work-icon work-icon-positioned">
+					<img src="logo.png">
+				</div>
+				<div class="work-text">
+					<div class="arayen-text">
+						<span class="unbounded-text">arayen </span>
+						<span class="sf-pro-text">— команда, которая строит независимые и уникальные проекты в рамках Minecraft и за его пределами.</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="work-item">
+			<div class="work-text">
+				<div class="expansion-text">
+					<span class="expansion-unbounded">Мы расширяемся. </span>
+					<span class="expansion-sf-pro">Если у вас есть идея для нового проекта и желание над ней с нами работать — мы рады сотрудничать. Начать просто:</span>
+				</div>
+				<div class="contact-container" id="contact-telegram">напишите @mineteam_admin в телеграм</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="vacancies-section" id="vacancies-section">
+	<div class="vacancies-title">vacancies</div>
+	<div class="vacancies-grid">
+		<div class="vacancy-card">
+			<div class="vacancy-title">3D моделлер</div>
+			<div class="vacancy-description">Создание моделей в Blockbench средней детализации.</div>
+			<img class="vacancy-icon-img" src="fq.png" alt="Иконка">
+		</div>
+		<div class="vacancy-card">
+			<div class="vacancy-title">3D моделлер</div>
+			<div class="vacancy-description">Создание моделей в Blockbench средней детализации.</div>
+			<img class="vacancy-icon-img" src="fq.png" alt="Иконка">
+		</div>
+		<div class="vacancy-card">
+			<div class="vacancy-title">3D моделлер</div>
+			<div class="vacancy-description">Создание моделей в Blockbench средней детализации.</div>
+			<img class="vacancy-icon-img" src="fq.png" alt="Иконка">
+		</div>
+		<div class="vacancy-card">
+			<div class="vacancy-title">3D моделлер</div>
+			<div class="vacancy-description">Создание моделей в Blockbench средней детализации.</div>
+			<img class="vacancy-icon-img" src="fq.png" alt="Иконка">
+		</div>
+	</div>
+</section>
+
+<section class="team-section">
+	<div class="team-title">team</div>
+	<div class="team-card-container">
+		<!-- Десктопная версия (скрыта на мобильных) -->
+		<div class="team-card">
+			<div class="team-name">myPPotae</div>
+			<div class="team-role">managing director</div>
+			<img class="team-avatar" src="myPPotae.png">
+		</div>
+		<div class="team-card">
+			<div class="team-name">eksponate</div>
+			<div class="team-role">director media & creative</div>
+			<img class="team-avatar" src="eksponate.png">
+		</div>
+		<div class="team-card">
+			<div class="team-name">imson</div>
+			<div class="team-role">director b2b & technical</div>
+			<img class="team-avatar" src="imson.png">
+		</div>
+		<div class="team-card">
+			<div class="team-name">luxash</div>
+			<div class="team-role">director researh & development</div>
+			<img class="team-avatar" src="luxash.png">
+		</div>
+		<div class="team-card">
+			<div class="team-name">tech_work</div>
+			<div class="team-role">helper</div>
+			<img class="team-avatar" src="tech_work.png">
+		</div>
+		<div class="team-card">
+			<div class="team-name">rish</div>
+			<div class="team-role">video editor</div>
+			<img class="team-avatar" src="rish.png">
+		</div>
+		<div class="team-card">
+			<div class="team-name">serqay</div>
+			<div class="team-role">3d modeller</div>
+			<img class="team-avatar" src="serqay.png">
+		</div>
+		<div class="team-card">
+			<div class="team-name">Prostoy_Artemka</div>
+			<div class="team-role">Infrastructure admin</div>
+			<img class="team-avatar" src="Prostoy_Artemka.png">
+		</div>
+		<div class="team-card">
+			<div class="team-name">pochemuchka</div>
+			<div class="team-role">developer & 3d modeller</div>
+			<img class="team-avatar" src="pochemuchka.png">
+		</div>
+		<div class="team-card">
+			<div class="team-name">Vizle</div>
+			<div class="team-role">3d modeller</div>
+			<img class="team-avatar" src="Vizle.png">
+		</div>
+		<div class="team-card">
+			<div class="team-name">sixxtn</div>
+			<div class="team-role">builder</div>
+			<img class="team-avatar" src="sixxtn.png">
+		</div>
+		<div class="team-card">
+			<div class="team-name">Mediar</div>
+			<div class="team-role">skinmaker</div>
+			<img class="team-avatar" src="Mediar.png">
+		</div>
+		<div class="team-card">
+			<div class="team-name">ProTiPro</div>
+			<div class="team-role">3d modeller</div>
+			<img class="team-avatar" src="ProTiPro.png">
+		</div>
+		<div class="team-card">
+			<div class="team-name">Nespisnikersni</div>
+			<div class="team-role">developer</div>
+			<img class="team-avatar" src="Nespisnikersni.png">
+		</div>
+		<div class="team-card">
+			<div class="team-name">MaKnakezZ</div>
+			<div class="team-role">bilder</div>
+			<img class="team-avatar" src="MaKnakezZ.png">
+		</div>
+		<div class="team-card">
+			<div class="team-name">Romich333</div>
+			<div class="team-role">3d modeller</div>
+			<img class="team-avatar" src="Romich333.png">
+		</div>
+		<div class="team-card">
+			<div class="team-name">HKachka</div>
+			<div class="team-role">counselor</div>
+			<img class="team-avatar" src="HKachka.png">
+		</div>
+		<div class="team-card">
+			<div class="team-name">MrCopeika</div>
+			<div class="team-role">skinmaker</div>
+			<img class="team-avatar" src="MrCopeika.png">
+		</div>
+	</div>
+	
+	<!-- Мобильная версия команды -->
+	<div class="team-cards-mobile">
+		<div class="team-card-mobile">
+			<img class="team-avatar-mobile" src="myPPotae.png">
+			<div class="team-name-mobile">myPPotae</div>
+			<div class="team-role-mobile">managing director</div>
+		</div>
+		<div class="team-card-mobile">
+			<img class="team-avatar-mobile" src="eksponate.png">
+			<div class="team-name-mobile">eksponate</div>
+			<div class="team-role-mobile">director media & creative</div>
+		</div>
+		<div class="team-card-mobile">
+			<img class="team-avatar-mobile" src="imson.png">
+			<div class="team-name-mobile">imson</div>
+			<div class="team-role-mobile">director b2b & technical</div>
+		</div>
+		<div class="team-card-mobile">
+			<img class="team-avatar-mobile" src="luxash.png">
+			<div class="team-name-mobile">luxash</div>
+			<div class="team-role-mobile">director researh & development</div>
+		</div>
+		<div class="team-card-mobile">
+			<img class="team-avatar-mobile" src="tech_work.png">
+			<div class="team-name-mobile">tech_work</div>
+			<div class="team-role-mobile">helper</div>
+		</div>
+		<div class="team-card-mobile">
+			<img class="team-avatar-mobile" src="rish.png">
+			<div class="team-name-mobile">rish</div>
+			<div class="team-role-mobile">video editor</div>
+		</div>
+		<div class="team-card-mobile">
+			<img class="team-avatar-mobile" src="serqay.png">
+			<div class="team-name-mobile">serqay</div>
+			<div class="team-role-mobile">3d modeller</div>
+		</div>
+		<div class="team-card-mobile">
+			<img class="team-avatar-mobile" src="Prostoy_Artemka.png">
+			<div class="team-name-mobile">Prostoy_Artemka</div>
+			<div class="team-role-mobile">Infrastructure admin</div>
+		</div>
+		<div class="team-card-mobile">
+			<img class="team-avatar-mobile" src="pochemuchka.png">
+			<div class="team-name-mobile">pochemuchka</div>
+			<div class="team-role-mobile">developer & 3d modeller</div>
+		</div>
+		<div class="team-card-mobile">
+			<img class="team-avatar-mobile" src="Vizle.png">
+			<div class="team-name-mobile">Vizle</div>
+			<div class="team-role-mobile">3d modeller</div>
+		</div>
+		<div class="team-card-mobile">
+			<img class="team-avatar-mobile" src="sixxtn.png">
+			<div class="team-name-mobile">sixxtn</div>
+			<div class="team-role-mobile">builder</div>
+		</div>
+		<div class="team-card-mobile">
+			<img class="team-avatar-mobile" src="Mediar.png">
+			<div class="team-name-mobile">Mediar</div>
+			<div class="team-role-mobile">skinmaker</div>
+		</div>
+		<div class="team-card-mobile">
+			<img class="team-avatar-mobile" src="ProTiPro.png">
+			<div class="team-name-mobile">ProTiPro</div>
+			<div class="team-role-mobile">3d modeller</div>
+		</div>
+		<div class="team-card-mobile">
+			<img class="team-avatar-mobile" src="Nespisnikersni.png">
+			<div class="team-name-mobile">Nespisnikersni</div>
+			<div class="team-role-mobile">developer</div>
+		</div>
+		<div class="team-card-mobile">
+			<img class="team-avatar-mobile" src="MaKnakezZ.png">
+			<div class="team-name-mobile">MaKnakezZ</div>
+			<div class="team-role-mobile">bilder</div>
+		</div>
+		<div class="team-card-mobile">
+			<img class="team-avatar-mobile" src="Romich333.png">
+			<div class="team-name-mobile">Romich333</div>
+			<div class="team-role-mobile">3d modeller</div>
+		</div>
+		<div class="team-card-mobile">
+			<img class="team-avatar-mobile" src="HKachka.png">
+			<div class="team-name-mobile">HKachka</div>
+			<div class="team-role-mobile">counselor</div>
+		</div>
+		<div class="team-card-mobile">
+			<img class="team-avatar-mobile" src="MrCopeika.png">
+			<div class="team-name-mobile">MrCopeika</div>
+			<div class="team-role-mobile">skinmaker</div>
+		</div>
+	</div>
+	
+	<!-- Большая карточка -->
+	<div class="large-team-card">
+		<div class="large-team-card-content">
+			<div class="large-team-card-icon">
+				<img src="solt.png" alt="Иконка"> <!-- Изменено на solt.png -->
+			</div>
+			<div class="large-team-card-title">
+				Мы делаем сайты (и нетолько) на заказ
+			</div>
+			<div class="large-team-card-description">
+				А также выстраиваем линию сотрудничества с другими проектами. Если у вас уже есть готовый проект: большой, маленький, проект на этапе идеи — пишите. Мы всегда готовы инвестировать в good project и коллаборировать.
+			</div>
+			<div class="large-team-card-button" onclick="window.open('https://t.me/mineteam_admin', '_blank');"> <!-- Изменена ссылка на @mineteam_admin -->
+				<span class="large-team-card-button-text">написать</span>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Обновленный футер на всю ширину -->
+<div class="footer-wrapper">
+	<div class="footer">
+		<div class="footer-content">
+			<div class="footer-text footer-website">cайт команды arayen</div>
+			<div class="footer-text footer-contacts">контакты</div>
+		</div>
+	</div>
+</div>
+
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+	let currentSlide = 0;
+	const heroSlider = document.getElementById('hero-slider');
+	let slideInterval;
+
+	const iconsJournal = `
+		<div class="image-blocks">
+			<a href="https://www.youtube.com/@minejournal" target="_blank" class="image-block" data-icon="youtube">
+				<img src="youtube.png" alt="YouTube">
+			</a>
+			<a href="https://music.yandex.ru/album/36531237" target="_blank" class="image-block" data-icon="yandex">
+				<img src="yandex.png" alt="Яндекс Музыка">
+			</a>
+			<a href="https://t.me/mine_journal" target="_blank" class="image-block" data-icon="telegram">
+				<img src="telegram.png" alt="Telegram">
+			</a>
+		</div>
+	`;
+
+	const iconsSkintimes = `
+		<div class="image-blocks">
+			<a href="https://t.me/skintimes" target="_blank" class="image-block" data-icon="telegram">
+				<img src="telegram.png" alt="Telegram">
+			</a>
+		</div>
+	`;
+
+	const iconsEvolution = `
+		<div class="image-blocks">
+			<a href="https://t.me/evolution_std" target="_blank" class="image-block" data-icon="telegram">
+				<img src="telegram.png" alt="Telegram">
+			</a>
+			<a href="https://discord.gg/dC6t2Gme" target="_blank" class="image-block" data-icon="discord">
+				<img src="ds.png" alt="Discord">
+			</a>
+		</div>
+	`;
+
+	const iconsBuild = `
+		<div class="image-blocks">
+			<a href="https://t.me/bild_std" target="_blank" class="image-block" data-icon="telegram">
+				<img src="telegram.png" alt="Telegram">
+			</a>
+		</div>
+	`;
+
+	const iconsPodushka = `
+		<div class="image-blocks">
+			<a href="https://t.me/holodnipodushka" target="_blank" class="image-block" data-icon="telegram">
+				<img src="telegram.png" alt="Telegram">
+			</a>
+		</div>
+	`;
+
+	function createDots(slideIndex, activeColor) {
+		let dotsHTML = '<div class="dots-background"></div>';
+		for (let i = 0; i < 5; i++) {
+			const isActive = (i === slideIndex);
+			const opacity = isActive ? '1' : '0.4';
+			const activeClass = isActive ? 'active' : '';
+			const bgColor = isActive ? activeColor : activeColor + '66';
+			dotsHTML += `
+				<div class="custom-dot ${activeClass}" data-slide="${i}" style="background: ${bgColor}; opacity: ${opacity};"></div>
+			`;
+		}
+		return dotsHTML;
+	}
+
+	function showFirstSlide() {
+		currentSlide = 0;
+		heroSlider.innerHTML = `
+			<div class="hero-text">
+				<div class="text-content">
+					<div class="hero-title">Майнкрафт — Журнал</div>
+					<span class="hero-badge">• подкаст и сми о людях</span>
+					<p class="hero-description">
+						Есть много сми о механиках и обновлениях Майнкрафта, но не одного сми о людях, на талантах которых и держится игра. В мае 2025 года мы начали это исправлять.
+					</p>
+					${iconsJournal}
+				</div>
+				<div class="dots-container">
+					<div class="slider-dots-custom">${createDots(0, '#176EF1')}</div>
+				</div>
+			</div>
+			<div class="hero-image">
+				<div class="video-preview"><img class="video-image" src="1.png" alt="Майнкрафт Журнал"></div>
+			</div>
+		`;
+		bindSlideEvents();
+	}
+	function showSecondSlide() {
+		currentSlide = 1;
+		heroSlider.innerHTML = `
+			<div class="hero-text">
+				<div class="text-content">
+					<div class="hero-title">SkinTime's</div>
+					<span class="hero-badge-purple">• медиа о скинах</span>
+					<p class="hero-description">
+						Интервью и встречи с ведущими скинмейкерами индустрии, посты об актуальных новостях и раздачах, статьи и разборы проблем скинмейкерства.
+					</p>
+					${iconsSkintimes}
+				</div>
+				<div class="dots-container">
+					<div class="slider-dots-custom">${createDots(1, '#D017F1')}</div>
+				</div>
+			</div>
+			<div class="hero-image">
+				<div class="video-preview"><img class="video-image" src="2.png" alt="SkinTime's"></div>
+			</div>
+		`;
+		bindSlideEvents();
+	}
+	function showThirdSlide() {
+		currentSlide = 2;
+		heroSlider.innerHTML = `
+			<div class="hero-text">
+				<div class="text-content">
+					<div class="hero-title">evolution</div>
+					<span class="hero-badge-red">• продакшен полного цикла</span>
+					<p class="hero-description">
+						Сайты, плагины, боты, модели, рендеры, скины, анимации — делаем все, что может быть полезно для ваших проектов или вас лично.
+					</p>
+					${iconsEvolution}
+				</div>
+				<div class="dots-container">
+					<div class="slider-dots-custom">${createDots(2, '#F02751')}</div>
+				</div>
+			</div>
+			<div class="hero-image">
+				<div class="video-preview"><img class="video-image" src="4.png" alt="evolution"></div>
+			</div>
+		`;
+		bindSlideEvents();
+	}
+	function showFourthSlide() {
+		currentSlide = 3;
+		heroSlider.innerHTML = `
+			<div class="hero-text">
+				<div class="text-content">
+					<div class="hero-title">билд</div>
+					<span class="hero-badge-orange">• команда билдеров</span>
+					<p class="hero-description">
+						Постройки любой сложности и в любых стилях на заказ.
+					</p>
+					${iconsBuild}
+				</div>
+				<div class="dots-container">
+					<div class="slider-dots-custom">${createDots(3, '#8C4A2F')}</div>
+				</div>
+			</div>
+			<div class="hero-image">
+				<div class="video-preview"><img class="video-image" src="3.png" alt="билд"></div>
+			</div>
+		`;
+		bindSlideEvents();
+	}
+	function showFifthSlide() {
+		currentSlide = 4;
+		heroSlider.innerHTML = `
+			<div class="hero-text">
+				<div class="text-content">
+					<div class="hero-title">холодная сторона подушки</div>
+					<span class="hero-badge-beige">• полу-благотворительный проект</span>
+					<p class="hero-description">
+						Телеграм канал с милыми пикчами с котятами, который не продает рекламу. Вместо неё — трибьют для пожертвований: половина донатов отправляется на еду бездомным котятам, а половина на еду админам.
+					</p>
+					${iconsPodushka}
+				</div>
+				<div class="dots-container">
+					<div class="slider-dots-custom">${createDots(4, '#B9A58A')}</div>
+				</div>
+			</div>
+			<div class="hero-image">
+				<div class="video-preview"><img class="video-image" src="5.png" alt="холодная сторона подушки"></div>
+			</div>
+		`;
+		bindSlideEvents();
+	}
+
+	function bindSlideEvents() {
+		document.querySelectorAll('.custom-dot').forEach(dot => {
+			dot.addEventListener('click', () => {
+				const idx = +dot.getAttribute('data-slide');
+				[showFirstSlide, showSecondSlide, showThirdSlide, showFourthSlide, showFifthSlide][idx]();
+				restartAutoSlide();
+			});
+			dot.addEventListener('mouseenter', () => {
+				if (!dot.classList.contains('active')) dot.style.opacity = '0.7';
+			});
+			dot.addEventListener('mouseleave', () => {
+				if (!dot.classList.contains('active')) dot.style.opacity = '0.4';
+			});
+		});
+		document.querySelectorAll('.image-block').forEach(block => {
+			block.addEventListener('mouseenter', () => {
+				block.style.borderColor = '#176EF1';
+				block.style.transform = 'translateY(-2px)';
+				block.style.boxShadow = '0 4px 12px rgba(23,110,241,0.2)';
+			});
+			block.addEventListener('mouseleave', () => {
+				block.style.borderColor = '#D4D4D4';
+				block.style.transform = 'translateY(0)';
+				block.style.boxShadow = 'none';
+			});
+		});
+	}
+
+	function startAutoSlide() {
+		slideInterval = setInterval(() => {
+			if (currentSlide === 0) showSecondSlide();
+			else if (currentSlide === 1) showThirdSlide();
+			else if (currentSlide === 2) showFourthSlide();
+			else if (currentSlide === 3) showFifthSlide();
+			else showFirstSlide();
+		}, 7000);
+	}
+
+	function restartAutoSlide() {
+		clearInterval(slideInterval);
+		startAutoSlide();
+	}
+
+	showFirstSlide();
+	startAutoSlide();
+	heroSlider.addEventListener('mouseenter', () => clearInterval(slideInterval));
+	heroSlider.addEventListener('mouseleave', restartAutoSlide);
+
+	function scrollToContacts() {
+		const contactElement = document.getElementById('contact-telegram');
+		if (contactElement) {
+			contactElement.scrollIntoView({ 
+				behavior: 'smooth',
+				block: 'center'
+			});
+		}
+	}
+
+	function scrollToWorkWithUs() {
+		const workTitleElement = document.getElementById('work-with-us-title');
+		if (workTitleElement) {
+			workTitleElement.scrollIntoView({ 
+				behavior: 'smooth',
+				block: 'center'
+			});
+		}
+	}
+
+	function scrollToVacancies() {
+		const vacanciesSection = document.getElementById('vacancies-section');
+		if (vacanciesSection) {
+			vacanciesSection.scrollIntoView({ 
+				behavior: 'smooth',
+				block: 'start'
+			});
+		}
+	}
+
+	const contactsLink = document.getElementById('contacts-link');
+	contactsLink.addEventListener('click', function(e) {
+		e.preventDefault();
+		scrollToContacts();
+	});
+
+	const vacanciesLink = document.getElementById('vacancies-link');
+	vacanciesLink.addEventListener('click', function(e) {
+		e.preventDefault();
+		scrollToVacancies();
+	});
+
+	const workWithUsButton = document.getElementById('work-with-us-button');
+	workWithUsButton.addEventListener('click', function() {
+		scrollToWorkWithUs();
+	});
+
+	const homeLink = document.querySelector('.nav-link[href="#"]');
+	homeLink.addEventListener('click', function(e) {
+		e.preventDefault();
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth'
+		});
+		document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+		this.classList.add('active');
+	});
+});
+</script>
+</body>
+</html>
